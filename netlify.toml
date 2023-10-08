@@ -1,7 +1,7 @@
 [build]
   functions = "netlify/functions"
   publish = "public"
-  command =   # This should be your build command if you have one
+  command = ""  
 
 [[redirects]]
   from = "/api/*"
