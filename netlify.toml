@@ -1,0 +1,9 @@
+[build]
+  functions = "src/functions"
+  publish = "public"
+  command = "npm run build"  # This should be your build command if you have one
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/express-api/:splat"
+  status = 200
