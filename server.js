@@ -101,6 +101,8 @@ function processHubspotData(data) {
         const lastname = contact.properties.lastname || "No Last Name";
         const email = contact.properties.email || "No Email";
         return {
+
+            
             name: `${firstname} ${lastname}`,
             email: email
         };

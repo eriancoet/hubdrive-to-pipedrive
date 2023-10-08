@@ -30,7 +30,7 @@ router.get('/hello', (req, res) => {
     });
 });
 
-app.use('/.netlify/functions/express-api', router);  // path must route to lambda
+app.use('/.netlify/functions/api', router);  // path must route to lambda
 
 module.exports = app;
 module.exports.handler = serverless(app);
