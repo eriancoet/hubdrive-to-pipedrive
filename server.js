@@ -6,7 +6,6 @@ const cron = require('node-cron');
 const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 // Serve static files from the public directory
 app.use(express.static('public'));
@@ -19,9 +18,12 @@ const HUBSPOT_API_KEY = process.env.HUBSPOT_API_KEY;
 const PIPEDRIVE_API_KEY = process.env.PIPEDRIVE_API_KEY;
 const PIPEDRIVE_API_URL = `https://api.pipedrive.com/v1/persons?api_token=${PIPEDRIVE_API_KEY}`;
 
+
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`[INFO] Server is running on port ${PORT}`);
+   console.log(`Server is running on port ${PORT}`);
 });
+
 
 // Synchronization logic
 async function synchronizeData() {
