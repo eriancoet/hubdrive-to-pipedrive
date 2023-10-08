@@ -8,6 +8,9 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Serve static files from the public directory
+app.use(express.static('public'));
+
 app.use(cors());
 
 
@@ -145,6 +148,7 @@ function processHubspotData(data) {
         };
     }
 console.log('Hello world')
+app.use('/netlify/front-end', express.static(path.join(__dirname, 'front-end')));
 
 // Serve static files from the React frontend app
 app.use(express.static(path.join(__dirname, 'front-end')));
@@ -153,4 +157,6 @@ app.use(express.static(path.join(__dirname, 'front-end')));
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'front-end', 'index.html'));
 });
+
+module.exports = app;
     

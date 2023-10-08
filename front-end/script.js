@@ -1,6 +1,6 @@
 document.getElementById("syncButton").addEventListener("click", function() {
 
-    fetch('/api/hello')
+    fetch('/api')
 .then(response => response.json())
 .then(data => console.log(data));
 
